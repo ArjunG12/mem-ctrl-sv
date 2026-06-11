@@ -94,5 +94,7 @@ xcelium> run
 === Complete ===
 Simulation complete via $finish(1) at time 705 NS + 0
 
-<img width="2382" height="249" alt="image" src="https://github.com/user-attachments/assets/16bedeef-2d2e-4896-9673-dee8202679f3" />
+```
+<img width="2372" height="250" alt="image" src="https://github.com/user-attachments/assets/9dffbcee-5368-4310-8c05-7446c03a0c53" />
+
 
