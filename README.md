@@ -39,3 +39,60 @@ The verification environment is designed with a layered approach:
 
 ## How to Run
 This code is written in standard IEEE 1800 SystemVerilog and can be compiled and simulated using any standard EDA tool (e.g., Synopsys VCS, Cadence Xcelium, Mentor Questa) or directly on EDA Playground.
+
+## Simulation Results
+
+The verification environment was compiled and simulated using **Cadence Xcelium**. The results confirm successful transaction randomization, proper stimulus driving, and correct operation of the `ready` handshake protocol.
+
+### Console Output
+
+The simulation logs demonstrate the Generator creating randomized transactions and the Driver successfully applying them to the DUT interface.
+
+```text
+xcelium> source /xcelium25.03/tools/xcelium/files/xmsimrc
+xcelium> run
+=== Simple Testbench ===
+[GEN] 5 | wr=0 addr=0xb8 wdata=0xd002 rdata=0x0000
+[GEN] 5 | wr=1 addr=0x77 wdata=0xd963 rdata=0x0000
+[GEN] 5 | wr=1 addr=0xd9 wdata=0x3313 rdata=0x0000
+[GEN] 5 | wr=0 addr=0x53 wdata=0x2abd rdata=0x0000
+[GEN] 5 | wr=0 addr=0xfb wdata=0x08ab rdata=0x0000
+[GEN] 5 | wr=0 addr=0x23 wdata=0x1cc4 rdata=0x0000
+[GEN] 5 | wr=0 addr=0xe1 wdata=0x6bcc rdata=0x0000
+[GEN] 5 | wr=0 addr=0xd7 wdata=0xa2f3 rdata=0x0000
+[GEN] 5 | wr=1 addr=0x6d wdata=0xea78 rdata=0x0000
+[GEN] 5 | wr=1 addr=0x32 wdata=0x0654 rdata=0x0000
+[GEN] 5 | wr=0 addr=0xb7 wdata=0x5cf2 rdata=0x0000
+[GEN] 5 | wr=1 addr=0xf8 wdata=0x60e6 rdata=0x0000
+[GEN] 5 | wr=1 addr=0x33 wdata=0xd2cf rdata=0x0000
+[GEN] 5 | wr=0 addr=0xbd wdata=0x2581 rdata=0x0000
+[GEN] 5 | wr=0 addr=0xa4 wdata=0x8677 rdata=0x0000
+[GEN] 5 | wr=0 addr=0xbe wdata=0x4a54 rdata=0x0000
+[GEN] 5 | wr=0 addr=0xd2 wdata=0x0fa2 rdata=0x0000
+[GEN] 5 | wr=0 addr=0x78 wdata=0x22aa rdata=0x0000
+[GEN] 5 | wr=0 addr=0x78 wdata=0x683d rdata=0x0000
+[GEN] 5 | wr=1 addr=0xb4 wdata=0xec0e rdata=0x0000
+[DRIVER] 15 | wr=0 addr=0xb8 wdata=0xd002 rdata=0x0000
+[DRIVER] 45 | wr=1 addr=0x77 wdata=0xd963 rdata=0x0000
+[DRIVER] 95 | wr=1 addr=0xd9 wdata=0x3313 rdata=0x0000
+[DRIVER] 145 | wr=0 addr=0x53 wdata=0x2abd rdata=0x0000
+[DRIVER] 175 | wr=0 addr=0xfb wdata=0x08ab rdata=0x0000
+[DRIVER] 205 | wr=0 addr=0x23 wdata=0x1cc4 rdata=0x0000
+[DRIVER] 235 | wr=0 addr=0xe1 wdata=0x6bcc rdata=0x0000
+[DRIVER] 265 | wr=0 addr=0xd7 wdata=0xa2f3 rdata=0x0000
+[DRIVER] 295 | wr=1 addr=0x6d wdata=0xea78 rdata=0x0000
+[DRIVER] 345 | wr=1 addr=0x32 wdata=0x0654 rdata=0x0000
+[DRIVER] 395 | wr=0 addr=0xb7 wdata=0x5cf2 rdata=0x0000
+[DRIVER] 425 | wr=1 addr=0xf8 wdata=0x60e6 rdata=0x0000
+[DRIVER] 475 | wr=1 addr=0x33 wdata=0xd2cf rdata=0x0000
+[DRIVER] 525 | wr=0 addr=0xbd wdata=0x2581 rdata=0x0000
+[DRIVER] 555 | wr=0 addr=0xa4 wdata=0x8677 rdata=0x0000
+[DRIVER] 585 | wr=0 addr=0xbe wdata=0x4a54 rdata=0x0000
+[DRIVER] 615 | wr=0 addr=0xd2 wdata=0x0fa2 rdata=0x0000
+[DRIVER] 645 | wr=0 addr=0x78 wdata=0x22aa rdata=0x0000
+[DRIVER] 675 | wr=0 addr=0x78 wdata=0x683d rdata=0x0000
+=== Complete ===
+Simulation complete via $finish(1) at time 705 NS + 0
+
+<img width="2382" height="249" alt="image" src="https://github.com/user-attachments/assets/16bedeef-2d2e-4896-9673-dee8202679f3" />
+
